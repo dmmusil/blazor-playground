@@ -10,6 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - run: dotnet test
+
       - uses: superfly/flyctl-actions/setup-flyctl@master
       
       - run: flyctl deploy --remote-only
