@@ -5,6 +5,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ops", "ops", "{12DA73C8-D32D-42B0-AA3C-DFF6002591DF}"
 	ProjectSection(SolutionItems) = preProject
 		fly.toml = fly.toml
+		fly.yaml = .github/workflows/fly.yaml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Tests", "Playground.Tests\Playground.Tests.csproj", "{76E5722F-4E67-4847-8598-D941AC5B8CF3}"

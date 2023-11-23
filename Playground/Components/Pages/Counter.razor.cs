@@ -44,10 +44,8 @@ public partial class Counter
         return absoluteUri;
     }
 
-    private Task IncrementCount()
-    {
-        return _connection is not null
+    private Task IncrementCount() =>
+        _connection is not null
             ? _connection.SendAsync("OnIncrement")
             : Task.CompletedTask;
-    }
 }
