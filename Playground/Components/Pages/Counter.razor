@@ -1,0 +1,11 @@
+﻿@page "/counter"
+@inject NavigationManager Nav
+@rendermode InteractiveServer
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @(_currentCount.HasValue ? _currentCount : "Loading")</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>

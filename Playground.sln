@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground", "Playground\Playground.csproj", "{904D4D4E-A3AA-4117-B15A-9D1F0BA593B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ops", "ops", "{12DA73C8-D32D-42B0-AA3C-DFF6002591DF}"
+	ProjectSection(SolutionItems) = preProject
+		fly.toml = fly.toml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Tests", "Playground.Tests\Playground.Tests.csproj", "{76E5722F-4E67-4847-8598-D941AC5B8CF3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{904D4D4E-A3AA-4117-B15A-9D1F0BA593B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{904D4D4E-A3AA-4117-B15A-9D1F0BA593B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{904D4D4E-A3AA-4117-B15A-9D1F0BA593B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{904D4D4E-A3AA-4117-B15A-9D1F0BA593B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76E5722F-4E67-4847-8598-D941AC5B8CF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76E5722F-4E67-4847-8598-D941AC5B8CF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76E5722F-4E67-4847-8598-D941AC5B8CF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76E5722F-4E67-4847-8598-D941AC5B8CF3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
