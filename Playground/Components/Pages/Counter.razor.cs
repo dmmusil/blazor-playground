@@ -13,13 +13,7 @@ public partial class Counter
         var absoluteUri = Nav.ToAbsoluteUri(CounterHub.Path);
         absoluteUri = EnsureHttpsAndPreserveNonStandardPort(absoluteUri);
         _connection = new HubConnectionBuilder()
-            .WithUrl(absoluteUri,
-                options =>
-                    options.HttpMessageHandlerFactory = innerHandler
-                        => new CredentialHandler
-                        {
-                            InnerHandler = innerHandler
-                        })
+            .WithUrl(absoluteUri)
             .Build();
         _connection.On<int>("NewValue", i =>
         {
