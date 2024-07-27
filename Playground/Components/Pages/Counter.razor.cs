@@ -11,7 +11,7 @@ public partial class Counter
     protected override async Task OnInitializedAsync()
     {
         var absoluteUri = Nav.ToAbsoluteUri(CounterHub.Path);
-        absoluteUri = EnsureHttpsAndPreserveNonStandardPort(absoluteUri);
+        // absoluteUri = EnsureHttpsAndPreserveNonStandardPort(absoluteUri);
         _connection = new HubConnectionBuilder()
             .WithUrl(absoluteUri)
             .Build();
