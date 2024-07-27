@@ -1,0 +1,35 @@
+name: Deploy PR
+
+# the workflow to execute on is comments that are newly created
+on:
+  issue_comment:
+    types: [created]
+
+# permissions needed for reacting to IssueOps commands on issues and PRs
+permissions:
+  pull-requests: write
+  issues: write
+  checks: read
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      # execute IssueOps command logic, hooray!
+      # this will be used to "gate" all future steps below
+      - uses: github/command@v1
+        id: command
+        with:
+          command: ".deploy"
+
+      # run your custom logic for your project here - example seen below
+      - uses: actions/checkout@v4
+        if: ${{ steps.command.outputs.continue == 'true' }}
+
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+        if: ${{ steps.command.outputs.continue == 'true' }}
+      
+      - run: flyctl deploy --remote-only
+        if: ${{ steps.command.outputs.continue == 'true' }}
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
