@@ -15,10 +15,10 @@ public partial class Counter
         _connection = new HubConnectionBuilder()
             .WithUrl(absoluteUri)
             .Build();
-        _connection.On<int>("NewValue", i =>
+        _connection.On<int>("NewValue", async i =>
         {
             _currentCount = i;
-            InvokeAsync(StateHasChanged);
+            await InvokeAsync(StateHasChanged);
         });
         await _connection.StartAsync();
         await _connection.SendAsync("OnConnect");
