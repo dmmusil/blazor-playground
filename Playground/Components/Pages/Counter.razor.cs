@@ -11,14 +11,14 @@ public partial class Counter
     protected override async Task OnInitializedAsync()
     {
         var absoluteUri = Nav.ToAbsoluteUri(CounterHub.Path);
-        absoluteUri = EnsureHttpsAndPreserveNonStandardPort(absoluteUri);
+        // absoluteUri = EnsureHttpsAndPreserveNonStandardPort(absoluteUri);
         _connection = new HubConnectionBuilder()
             .WithUrl(absoluteUri)
             .Build();
-        _connection.On<int>("NewValue", i =>
+        _connection.On<int>("NewValue", async i =>
         {
             _currentCount = i;
-            InvokeAsync(StateHasChanged);
+            await InvokeAsync(StateHasChanged);
         });
         await _connection.StartAsync();
         await _connection.SendAsync("OnConnect");
